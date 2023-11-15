@@ -67,6 +67,26 @@ body {
                             Content
 ========================================================== */
 
-h2 {
-	padding-block: 20px;
+form {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}
+
+input, button {
+	padding: 10px;
+}
+label {
+	display: block;
+	padding-block-end: 10px;
+}
+
+button {
+	cursor: pointer;
+}
+
+form div {
+	padding-block: 10px;
 }

@@ -9,6 +9,13 @@
 </head>
 
 <body>
+    <form onsubmit="return false">
+        <div>
+            <label for="randomNumber">Rate eine Zahl zwischen 1 und 10:</label>
+            <input type="number" name="randomNumber" id="randomNumber">
+        </div>
+        <div><button type="button" onclick="checkNumber()">Check Number</button></div>
+    </form>
     <div id="output"></div>
     <script src="./assets/js/main.js"></script>
 </body>

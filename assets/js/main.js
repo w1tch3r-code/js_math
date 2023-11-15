@@ -121,16 +121,20 @@ console.log("%c JS-Vertiefung – Math-Level_2_2", "color: tomato");
 
 // Hinweis: In der Ergebnisvorschau wird die Methode prompt() verwendet.
 
-const zufallszahl = Math.floor(Math.random() * 10) + 1;
 
-const benutzerzahl = parseInt(prompt("Rate die Zahl zwischen 1 und 10:"));
+const output = document.querySelector("#output");
 
-if (isNaN(benutzerzahl)) {
-	console.log("Ungültige Eingabe. Bitte gib eine Zahl ein.");
-} else {
-	if (benutzerzahl === zufallszahl) {
-		console.log("Herzlichen Glückwunsch! Du hast die Zahl erraten!");
+const checkNumber = () => {
+	const zufallszahl = Math.floor(Math.random() * 10) + 1;
+	const benutzerzahl = Number(document.querySelector("#randomNumber").value);
+	if (isNaN(benutzerzahl)) {
+		console.log("Ungültige Eingabe. Bitte gib eine Zahl ein.");
 	} else {
-		console.log("Leider falsch. Versuche es erneut!");
+		if (benutzerzahl === zufallszahl) {
+			output.innerHTML =
+				`Herzlichen Glückwunsch! Du hast die Zahl erraten!<br> Zufallszahl: "${zufallszahl}" ist gleich Benutzerzahl: "${benutzerzahl}"!`;
+		} else {
+			output.innerHTML = "Leider falsch. Versuche es erneut!";
+		}
 	}
-}
+};
